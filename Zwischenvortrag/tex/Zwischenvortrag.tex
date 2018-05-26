@@ -1,0 +1,81 @@
+% !TeX program = lualatex
+% Auch „german“ muss angegeben werden, damit die Sprache (z.B. in siunitx)
+% auf Deutsch gestellt wird.
+\documentclass[german, ngerman]{beamer}
+\input{einstellungen.tex}
+
+\title{Strukturbildung in Ökosystemen}
+\subtitle{Zwischenvortrag: Anwendeung des Pseudospektralverfahrens \\ auf die Fischer-Gleichung}
+% \subject wird von der Vorlage nicht direkt verwendet
+%\subject{Thema}
+% Autor angeben
+\author{Johannes B. , Jörn S., Hauke H.,...}
+% \institute wird von der Vorlage nicht direkt verwendet
+\institute{}
+\date{}
+\keywords{Münster}
+
+\begin{document}
+
+% Titelfolie
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Überblick}
+
+\begin{itemize}
+	\item Einführung: Nichtlinearität strukturbildender Prozesse
+	\item Shortcut: Runge-Kutta und Räuber-Beute-Modell
+	\item Galerkin-Methode
+	\item FFT und deren Anwendung 
+	\item Pseudospektralverfahren allgemein 
+	\item (De)aliasing
+	\item  Fischer-Gleichung: Interpretation und Lösung in 1D/2D
+	
+	
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Beispielbild}  
+\begin{itemize}
+	\item Beispiel
+\end{itemize}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.95]{Bilder/beispielbild.jpg}
+\end{figure}
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Beispielgleichung}
+
+\begin{block}  {Beispiel}
+\begin{align*} 
+G^{\mu \nu} = \frac{8\pi G}{c^4} T^{\mu \nu}                 
+\end{align*}
+
+\end{block}
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Quellen}
+
+\begin{thebibliography}{9}
+
+
+\bibitem{SRT}
+Rainer Zufall (2012): \textit{Beispielquelle} (Beispielverlag)
+
+\end{thebibliography}
+\end{frame}
+
+\end{document}
