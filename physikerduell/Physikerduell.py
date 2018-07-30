@@ -1,7 +1,7 @@
 import tkinter as tk
 import numpy as np
 import csv
-
+from tkinter.filedialog import askopenfilename
 
 #Anfangsvariablen
 Anfangsi=0
@@ -36,33 +36,37 @@ photo2.image = photo
 
 
 
-#Punkte einlesen
-i=0
-Punkte = np.array([])
-reader = csv.reader(open("Katalog01.csv"))
-for row in reader:
-    if (row[1] == ""):
-        del(row[1])
-    else:
-        Punkte = np.append( Punkte ,float(row[1]))
-        i=i+1
-
-#Fragen Einlesen       
-i=0
-Fragen = np.array([])
-reader = csv.reader(open("Katalog01.csv"))
-for row in reader:
-    if (row[0] == ""):
-        del(row[0])
-    else:
-        Fragen = np.append( Fragen ,row[0])
-        i=i+1
 
 
+def Aussuchen():
+    Dateinname =askopenfilename()
+	#Punkte einlesen
+    i=0
+    global Punkte
+    Punkte = np.array([])
+    reader = csv.reader(open(Dateinname))
+    for row in reader:
+        if (row[1] == ""):
+            del(row[1])
+        else:
+            Punkte = np.append( Punkte ,float(row[1]))
+            i=i+1
 
+	#Fragen Einlesen       
+    i=0
+    global Fragen
+    Fragen = np.array([])
+    reader = csv.reader(open(Dateinname))
+    for row in reader:
+        if (row[0] == ""):
+	        del(row[0])
+        else:
+            Fragen = np.append( Fragen ,row[0])
+            i=i+1
+    
 
-
-
+	       
+	       
 
 
 #Menü Definition der Funktionen die im Menü Aufgerufen werden
@@ -159,6 +163,7 @@ menu = tk.Menu(fenster1)
 fenster1.config(menu=menu)
 menu.add_command(label='Exit', command=Exit)# Menü um das Programm zu beenden
 menu.add_command(label='Start',command=Start)#Menu um das Programm zu starten
+menu.add_command(label='Datei', command=Aussuchen)
 menu.add_command(label='Back',command = commandback)#Menu üm ine Folie zurück zu gehen
 menu.add_command(label='Next',command = commandnext)#Menü um zu nächsten Folie zu gehen
 menu.add_command(label='Arbeitsgruppen',command=Arbeitsgruppenanzahl)
